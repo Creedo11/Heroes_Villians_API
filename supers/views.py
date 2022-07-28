@@ -21,7 +21,7 @@ def supers_list(request):
 
 
 @api_view(['GET'])
-def supers_detail(request):
+def super_detail(request):
 
     return Response('')
 
