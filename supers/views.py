@@ -15,7 +15,7 @@ def supers_list(request):
         queryset = Super.objects.all()
         
         if super_types:
-            queryset = queryset.filter(super_type__type=super_types) #filter returns a query set as well, but can be filtered to return one object in that 
+            queryset = queryset.filter(super_type__type=super_types) #Filter returns a query set, but can be told to return one object in that set. By using double underscore after fk relationship property, we can specify a property to filter by that exits on the nested fk relationship.
             serializer = SuperSerializer(queryset, many=True)
             return Response(serializer.data)
         else:
